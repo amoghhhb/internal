@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <title>Welcome to the Game</title>
+</head>
+<body>
+  <main id="hero-section" class="hero-container">
+    <h1 class="hero-title">WELCOME TO <br>THE GAME</h1>
+    <form class="hero-form" id="gameForm">
+      <div class="form-group">
+        <label for="fullName" class="form-label">FULL NAME:</label>
+        <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Your Name" required />
+      </div>
+      <button type="submit" class="submit-button">START</button>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById("gameForm").addEventListener("submit", async function (event) {
+      event.preventDefault(); // Prevent actual form submit
+
+      const name = document.getElementById("fullName").value;
+
+      try {
+        const response = await fetch("/api/save-name", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ fullName: name })
+        });
+
+        if (response.ok) {
+          alert("Name submitted successfully!");
+          window.location.href = "game.html";
+        } else {
+          alert("Failed to submit. Try again.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred.");
+      }
+    });
+  </script>
+</body>
+</html>
