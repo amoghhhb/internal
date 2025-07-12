@@ -1,0 +1,55 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hero-container {
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form-input {
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  width: 250px;
+  font-size: 1em;
+  text-align: center;
+}
+
+.submit-button {
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.submit-button:hover {
+  transform: scale(1.05);
+}
